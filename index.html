@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffc0c"/>
+    <title>Smooth scroll</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <div class="container smooth-scroll-wrapper">
+
+        <section class="one">
+            <h1>First page</h1>
+        </section>
+
+        <section class="two">
+            <h1>Second page</h1>
+        </section>
+
+        <section class="three">
+            <h1>Third page</h1>
+        </section>
+
+        <section class="four">
+            <h1>Web dev</h1>
+        </section>
+        
+    </div>
+
+
+    <script>
+        const body = document.body,
+            scrollWrap = document.getElementsByClassName("smooth-scroll-wrapper")[0],
+            height = scrollWrap.getBoundingClientRect().height - 1,
+            speed = 0.05;
+
+        var offset = 0;
+
+        body.style.height = Math.floor(height) + "px";
+
+        function smoothScroll() {
+            offset += (window.pageYOffset - offset) * speed;
+
+            var scroll = "translateY(-" + offset + "px) translateZ(0)";
+            scrollWrap.style.transform = scroll;
+
+            callScroll = requestAnimationFrame(smoothScroll);
+        }
+
+        smoothScroll();
+    </script>
+    
+</body>
+</html>

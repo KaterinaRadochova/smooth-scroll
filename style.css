@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+body {
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+    width: 100%;
+}
+
+.smooth-scroll-wrapper {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+	will-change: transform;
+}
+
+section {
+    height: 100vh;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 10rem;
+    color: rgb(54, 54, 54);
+    text-shadow: 1px 1px 4px rgb(188, 188, 188);
+}
+
+.one {
+    background-color:#ffc0cb;
+}
+.two {
+    background-color:rgb(187, 254, 255);
+}
+.three {
+    background-color:rgb(192, 255, 214);
+}
+.four {
+    background-color:rgb(255, 252, 192);
+}
